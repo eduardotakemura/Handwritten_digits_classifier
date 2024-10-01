@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✍️ Handwritten Digits Classifier</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+<body>
+   <div class="container">
+        <h1>Welcome to the Handwritten Digits Classifier!</h1>
+        <p class="description">
+            Hi there! I'm a CNN-based model, and I was trained on the MNIST dataset.
+            I can predict handwritten digits with surprising accuracy! This is particularly useful for applications like scanning or digitizing handwritten documents.
+            While I was trained on digits, this type of model can be extended to recognize any handwritten characters from any language. Pretty cool, right?
+        </p>
+
+       <h2>Give it a try! Draw something below, and I’ll try to predict what it is:</h2>
+
+       <div class="sub-container">
+           <div class="canva-container">
+
+                <canvas id="canvas" width="280" height="280"></canvas>
+                <br>
+                <button onclick="clearCanvas()">Clear</button>
+            </div>
+            <div class="predictions-container">
+                <h3>Predictions:</h3>
+                <p>(Hint: Try to center your drawing for better results)</p>
+                <div class="prediction-box">
+                    <p>I predict this is a <span id="most-probable" class="prediction-digit">?</span>, with a <span id="most-probable-confidence" class="confidence">?</span>% certainty.</p>
+                    <p>As second guess, I would say it's a <span id="second-probable" class="prediction-digit">?</span>, with a <span id="second-probable-confidence" class="confidence">?</span>% certainty.</p>
+                </div>
+                <a href="https://github.com/eduardotakemura/handwritten-digits-classifier">Source Code Here!</a>
+            </div>
+       </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='index.js') }}"></script>
+</body>
+</html>
